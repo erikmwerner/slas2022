@@ -6,6 +6,8 @@
 #ifndef __WELFORDSTATS__H__
 #define __WELFORDSTATS__H__
 
+#include <Arduino.h>
+
 class WelfordStats
 {
 	double _mean = 0;
@@ -13,19 +15,27 @@ class WelfordStats
 	double _min = 0; //< replace with max value of double
 	double _max = 0; //< replace with min value of double
 	int _count = 0;
+	double _z_score = 1.96;
 
 public:
-	double mean() {return _mean;}
-	double variance() {return (_count > 1) ? _var / (_count - 1) : 0;}
-	// double stdDev() const {return (_count > 1) ? sqrt(_var / (_count - 1)) : 0;}
-	//public double stdErr() const {return (_count > 0) ? stdDev()/sqrt(_count ) : 0;}
-	double minimum() {return _min;}
-	double maximum() {return _max;}
-	double count() {return _count;}
+	double mean() const {return _mean;}
+	double variance() const {return (_count > 1) ? _var / (_count - 1) : 0;}
+	double stdDev() const {return (_count > 1) ? sqrt(_var / (_count - 1)) : 0;}
+	double stdErr() const {return (_count > 0) ? stdDev()/sqrt(_count ) : 0;}
+	double confidence() const {return (_count > 0) ? _z_score * stdDev()/sqrt(_count ) : 0;}
+	double minimum() const {return _min;}
+	double maximum() const {return _max;}
+	double count() const {return _count;}
+	double zScore() const {return _z_score;}
 	
 	WelfordStats()
 	{
 		reset();
+	}
+	
+	void setZScore(const double z)
+	{
+		_z_score = z;
 	}
 
 	void reset()
