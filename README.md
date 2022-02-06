@@ -1,2 +1,2 @@
-# slas2022
-Materials for the SLAS IoT Short Course 2022
+SLAS 2020
+Arduino library for SLAS 2020 short course: Microcontrollers, the IoT and our Laboratories 
