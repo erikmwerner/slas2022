@@ -1,0 +1,24 @@
+#######################################
+# keywords.txt
+
+# Datatypes (KEYWORD1)
+# Methods and Functions (KEYWORD2)
+# Constants (LITERAL1)
+#######################################
+
+#######################################
+# Highlighting for WelfordStats class
+#######################################
+
+mean	KEYWORD2
+variance KEYWORD2
+stdDev KEYWORD2
+stdErr KEYWORD2
+confidence KEYWORD2
+minimum KEYWORD2
+maximum KEYWORD2
+count KEYWORD2
+setZScore KEYWORD2
+zScore KEYWORD2
+reset KEYWORD2
+update KEYWORD2
